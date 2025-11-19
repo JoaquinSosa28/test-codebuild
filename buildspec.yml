@@ -1,22 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "Installing AWS CLI (if needed)..."
-      - aws --version
-
   build:
     commands:
-      - echo "Hello from CodeBuild"
-      - echo "Current date: $(date)"
-      - echo "Listing S3 buckets..."
-      - aws s3 ls               # <-- lists all buckets
-      - echo "Listing contents of a specific bucket..."
-      - aws s3 ls s3://your-bucket-name  # <-- replace with real bucket
-      - echo "Listing files in workspace"
-      - ls -la
-
-artifacts:
-  files:
-    - '**/*'
+    - "echo Starting build..."
+    - "echo Listing S3 buckets:"
+    - "aws s3 ls"
+    - "echo Build complete."
