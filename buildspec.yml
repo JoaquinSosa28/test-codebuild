@@ -1,24 +1,9 @@
 version: 0.2
 
 phases:
-  install:
-    commands:
-      - echo "Starting install phase..."
-  pre_build:
-    commands:
-      - echo "Pre-build phase..."
   build:
     commands:
-      - echo "Building..."
-      - echo "Hello from CodeBuild!"
-      - echo "Current date: $(date)"
-      - echo "Listing files:"
+      - echo "Hello from CodeBuild"
+      - echo "Current date:" $(date)
+      - echo "Listing files in workspace"
       - ls -la
-  post_build:
-    commands:
-      - echo "Build completed successfully!"
-
-artifacts:
-  files:
-    - '**/*'
-
